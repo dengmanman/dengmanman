@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-15T09:08:55.482Z">
+<meta property="og:updated_time" content="2020-10-26T02:23:57.988Z">
 <meta name="twitter:card" content="summary">
   
   
@@ -54,17 +54,17 @@
             <div class="menu-main-container">
                 <ul id="menu-main" class="nav-menu">
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">首页</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/home">首页</a></li>
                 
                     <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">文章</a></li>
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">随笔</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/pages">随笔</a></li>
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">前端</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/web">前端</a></li>
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">后端</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/server">后端</a></li>
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">导航</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/menu">导航</a></li>
                 
                 </ul>
             </div>
@@ -87,7 +87,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2019/11/15/hello-world/" data-id="ck2zyrcrx0000xwusaz584e8u" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2019/11/15/hello-world/" data-id="ckgk4j4ws000154usffb9dvus" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -104,6 +104,12 @@
 
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>在_config.yml文件下的34行设置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year-:month-:day-:title.md</span> <span class="comment"># File name of new posts</span></span><br></pre></td></tr></table></figure>
+
+<p>执行下列命令可以创建新的写作文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new webpack-start</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
@@ -123,6 +129,14 @@
 
 
     
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/" rel="prev"><span class="meta-nav">←</span> flutter 动画</a></span>
+    
+    
+</nav><!-- .nav-single -->
+
 
 
 
@@ -150,6 +164,18 @@
       <ul>
         
           <li>
+            <a href="/2020/10/26/webpack-start/">webpack-start</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/26/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">hexo使用笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/">flutter 动画</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/15/hello-world/">Hello World</a>
           </li>
         
@@ -159,13 +185,27 @@
 
   
     
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
   
     
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/android/" style="font-size: 10px;">android</a>
+    </div>
+  </aside>
+
   
 </div>
       </div>
       <footer id="colophon" role="contentinfo">
-    <p>&copy; 2019 John Doe
+    <p>&copy; 2020 John Doe
     All rights reserved.</p>
     <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
 </footer>
