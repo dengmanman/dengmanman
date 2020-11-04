@@ -90,6 +90,7 @@ Microsoft YaHei,html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h
 	padding: 0;
 	border: 0;
 	font-size: 100%;
+	font-size: 18px;;
 	vertical-align: baseline; 
 }
 body {
@@ -324,7 +325,7 @@ button:active,
 input[type="submit"]:active,
 input[type="button"]:active,
 input[type="reset"]:active {
-	color: #757575;
+	color: #ebebeb;
 	background-color: #e1e1e1;
 	background-repeat: repeat-x;
 	background-image: -moz-linear-gradient(top, #ebebeb, #e1e1e1);
@@ -408,7 +409,7 @@ img.wp-post-image {
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
-	color: #757575;
+	color: #ebebeb;
 }
 img.wp-smiley,
 .rsswidget img {
@@ -543,7 +544,7 @@ img.wp-smiley,
 	overflow: hidden;
 }
 .author-description p {
-	color: #757575;
+	color: #ebebeb;
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
@@ -570,7 +571,7 @@ body {
 	font-size: 1rem;
 	font-family: Microsoft YaHei,  Helvetica, Arial, sans-serif;
 	text-rendering: optimizeLegibility;
-	color: rgb(0, 0, 0); /*Article & Widget Content*/
+	color: #ededed; /*Article & Widget Content*/
 }
 body.custom-font-enabled {
 	font-family: Microsoft YaHei,  Helvetica, Arial, sans-serif;
@@ -582,7 +583,7 @@ a {
     text-decoration: none;
 }
 a:hover {
-	color: rgb(0, 0, 0); /*Article Title Hover*/
+	color: #ededed; /*Article Title Hover*/
     text-decoration: underline;
 }
 
@@ -641,7 +642,7 @@ a:hover {
 .site {
 	padding: 0 24px;
 	padding: 0 1.714285714rem;
-	background-color: rgba(255, 255, 255, 0.20); /* Main Page */
+	background-color: #2364af0f; /* Main Page */
 }
 .site-content {
 	margin: 24px 0 0;
@@ -684,7 +685,7 @@ a:hover {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
-	color: #757575;
+	color: #ebebeb;
 }
 .header-image {
 	margin-top: 24px;
@@ -759,7 +760,7 @@ section[role="banner"] {
 	margin-left: 2.571428571rem;
 }
 .widget-area .widget a {
-	color: rgb(0, 0, 0); /* Widget Link Normal*/
+	color: #ededed; /* Widget Link Normal*/
 }
 .widget-area .widget a:hover {
 	color: rgb(81, 165, 168); /* Widget Link Hover*/
@@ -850,11 +851,11 @@ footer[role="contentinfo"] a:hover {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
-	color: #757575;
+	color: #ebebeb;
 }
 .comments-link a,
 .entry-meta a {
-	color: rgb(88, 88, 88); /*Article Meta Link Normal*/
+	color: rgb(34, 226, 66); /*Article Meta Link Normal*/
 }
 .comments-link a:hover,
 .entry-meta a:hover {
@@ -865,7 +866,7 @@ article.sticky .featured-post {
     /* Border Line for Special */
 	border-top: 1px solid rgba(0, 0, 0, 0.24);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.24);
-	color: #757575;
+	color: #ebebeb;
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 3.692307692;
@@ -947,7 +948,7 @@ article.sticky .featured-post {
 
 .entry-content a:Hover,
 .comment-content a:Hover{
-	color: rgb(0, 0, 0); /* Link in Article Content Hover */
+	color: #ededed; /* Link in Article Content Hover */
 }
 
 .entry-content ol,
@@ -1089,7 +1090,7 @@ img.aligncenter,
 .entry-content table,
 .comment-content table {
 	border-bottom: 1px solid #ededed;
-	color: #757575;
+	color: #009cee;
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
@@ -1131,19 +1132,19 @@ footer.entry-meta {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
-	color: #757575; /* Article Meta */
+	color: #ebebeb; /* Article Meta */
 }
 .single-author .entry-meta .by-author {
 	display: none;
 }
 .mu_register h2 {
-	color: #757575;
+	color: #ebebeb;
 	font-weight: normal;
 }
 
 /* Hexo Code */
 figure.highlight {
-    border: 1px solid rgba(0, 0, 0, 0.24);
+    border: 1px solid rgba(240, 230, 230, 0.24);
     margin-bottom: 15px;
     padding: 7px 15px;
     -webkit-border-radius: 2px;
@@ -1206,7 +1207,7 @@ figure.highlight .line {
 	border-bottom: 1px solid #ededed;
 }
 .archive-meta {
-	color: #757575;
+	color: #ebebeb;
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
@@ -1331,7 +1332,7 @@ article.format-quote .entry-content blockquote {
 	font-size: 1.071428571rem;
 	line-height: 1.6;
 	font-style: normal;
-	color: #6a6a6a;
+	color: #ebebeb;
 	background: #efefef;
 }
 
@@ -1358,7 +1359,7 @@ article.format-quote .entry-content blockquote {
 	margin: 0;
 }
 .format-status .entry-header header a {
-	color: #757575;
+	color: #ebebeb;
 }
 .format-status .entry-header header a:hover {
 	color: #21759b;
@@ -1565,7 +1566,7 @@ a.comment-edit-link:hover {
 	list-style-position: inside;
 }
 .template-front-page .widget-area .widget li a {
-	color: #757575;
+	color: #ebebeb;
 }
 .template-front-page .widget-area .widget li a:hover {
 	color: #21759b;
@@ -1720,7 +1721,7 @@ img#wpstats {
 	}
 	.main-navigation li a {
 		border-bottom: 0;
-		color: #6a6a6a;
+		color: #ebebeb;
 		line-height: 3.692307692;
 		text-transform: uppercase;
 		white-space: nowrap;
@@ -1830,7 +1831,7 @@ img#wpstats {
 /* Minimum width of 960 pixels. */
 @media screen and (min-width: 960px) {
 	body {
-		background-color: #e6e6e6;
+		background-color: #0195e2;
 	}
 	body .site {
 		padding: 0 40px;

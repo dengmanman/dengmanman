@@ -24,17 +24,18 @@ we" />
   
   <title>webpack-start | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="webpack快速入门安装webpack webpack依赖于node,必须所以先安装node。  初始化webpack-demo项目   1234mkdir webpack-demo2cd webpack-demo2npm init -ynpm i webpack webpack-cli   webpack的安装分为全局安装和局部安装，推荐使用局部安装。  ###">
+  <meta name="description" content="webpack快速入门安装webpack webpack依赖于node,必须所以先安装node。  初始化webpack-demo项目   1234mkdir webpack-demo2cd webpack-demo2npm init -ynpm i webpack webpack-cli   webpack的安装分为全局安装和局部安装，推荐使用局部安装。  不使用 -g 命令就不是全局安装。 1">
+<meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack-start">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;26&#x2F;webpack-start&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="webpack快速入门安装webpack webpack依赖于node,必须所以先安装node。  初始化webpack-demo项目   1234mkdir webpack-demo2cd webpack-demo2npm init -ynpm i webpack webpack-cli   webpack的安装分为全局安装和局部安装，推荐使用局部安装。  ###">
+<meta property="og:description" content="webpack快速入门安装webpack webpack依赖于node,必须所以先安装node。  初始化webpack-demo项目   1234mkdir webpack-demo2cd webpack-demo2npm init -ynpm i webpack webpack-cli   webpack的安装分为全局安装和局部安装，推荐使用局部安装。  不使用 -g 命令就不是全局安装。 1">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;hexo.jpg">
-<meta property="og:updated_time" content="2020-10-26T03:14:06.597Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;26&#x2F;webpack-start&#x2F;hexo.jpg">
+<meta property="og:updated_time" content="2020-10-29T06:53:55.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;hexo.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;26&#x2F;webpack-start&#x2F;hexo.jpg">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -98,7 +99,7 @@ we" />
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/26/webpack-start/" data-id="ckgpyneob0009cgus7umcd4uu" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/26/webpack-start/" data-id="ckh2qbnzv00032kus8s04559p" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -115,8 +116,61 @@ we" />
 <ul>
 <li>webpack的安装分为全局安装和局部安装，推荐使用局部安装。</li>
 </ul>
-<p>###</p>
-<p><img src="/.com//hexo.jpg" alt="hexo"></p>
+<p>不使用 -g 命令就不是全局安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 不填参数，默认表示dev 等效于  -s</span></span><br><span class="line">npm i webpack </span><br><span class="line"><span class="comment">#等效于</span></span><br><span class="line">npm i webpack -s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存为开发依赖项 -d</span></span><br><span class="line">npm i webpack -d</span><br></pre></td></tr></table></figure>
+
+<h3 id="打包第一个项目"><a href="#打包第一个项目" class="headerlink" title="打包第一个项目"></a>打包第一个项目</h3><ol>
+<li>创建三个文件， index.js, index.html, add-content.js</li>
+</ol>
+<p>index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> addContent <span class="keyword">from</span> <span class="string">'./add-content.js'</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">'webpack demo01'</span>)</span><br><span class="line">addContent()</span><br></pre></td></tr></table></figure>
+
+<p>index.html</p>
+<p>其中引入得js文件时打包出来的文件，需要执行接下来的打包命令之后才有</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./dist/bundle.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>add-content.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">'webpack'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>执行打包命令</li>
+</ol>
+<p>三个文件都准备好之后，执行打包命令进行打包。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx webpack --entry=./index.js --output-filename=bundle.js --mode=development</span><br></pre></td></tr></table></figure>
+<p>解释一下，npx,局部安装使用这个命令。</p>
+<p>npx webpack, 使用webpack打包。</p>
+<p>–entry=./index.js, 入口文件为index.js。</p>
+<p>–output-filename=bundle.js, 打包后的输出文件名叫bundle.js。</p>
+<p>–mode=development, 打包方式为开发模式。</p>
+<p>打包完成后，输出的文件在， ./dist/bundle.js。也就是我们在index.html引入的js文件路径。这个路径是webpack默认的。</p>
+<ol start="3">
+<li>脚本命令简化打包</li>
+</ol>
+<p>每次打包都要输入一长串的命令，不仅不方便还容易出错，所以我们可以借助npm脚本命令来简化打包。</p>
+<p>在 package.json 文件下的 script 字段对象里添加以下</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"build": "webpack --entry=./index.js --output-filename=bundle.js --mode=development"</span><br></pre></td></tr></table></figure>
+
+<p>把 index.js 里修改</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h1&gt;webpack&lt;/h1&gt;"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这下打包只需要执行,在浏览器打开 index.html，即可看到变化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用默认目录"><a href="#使用默认目录" class="headerlink" title="使用默认目录"></a>使用默认目录</h3><p>创建一个src文件夹, 将add-content.js和index.js 移动到 src 里面。</p>
+<p>在 package.json 里打包命令可以变成这样</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"build": "webpack --output-filename=bundle.js --mode=development"</span><br></pre></td></tr></table></figure>
+
+<p>如果把输出路径也改了</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"build": "webpack --mode=development"</span><br></pre></td></tr></table></figure>
+
+<p>可以得到结果 webpack 的默认入口是 src/index.js, 默认输出是 dist/main.js</p>
+<h3 id="使用配置文件"><a href="#使用配置文件" class="headerlink" title="使用配置文件"></a>使用配置文件</h3><p>创建 webpack.config.js 文件。添加以下内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">"./src/index.js"</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">"main.js"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    mode: <span class="string">"development"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>package.json, 改成以下</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"build": "webpack"</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，配置文件把命令都以对象的方式填写进去了，脚本就变得越来越简单了。</p>
+<h3 id="使用-webpack-dev-server"><a href="#使用-webpack-dev-server" class="headerlink" title="使用 webpack-dev-server"></a>使用 webpack-dev-server</h3><p><img src="/2020/10/26/webpack-start/hexo.jpg" alt="hexo"></p>
 
       
     </div><!-- .entry-content -->
@@ -129,6 +183,9 @@ we" />
 </a>
     
     
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+
     </footer>
 </article>
 
@@ -136,6 +193,8 @@ we" />
     
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2020/11/02/webpack-%E6%A8%A1%E5%9D%97%E6%A6%82%E5%BF%B5/" rel="prev"><span class="meta-nav">←</span> webpack-模块概念</a></span>
     
     
         <span class="nav-next"><a href="/2020/10/26/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" rel="next">hexo使用笔记 <span class="meta-nav">→</span></a></span>
@@ -169,6 +228,14 @@ we" />
       <ul>
         
           <li>
+            <a href="/2020/11/04/webpack-%E5%85%A5%E5%8F%A3%E4%B8%8E%E8%BE%93%E5%87%BA/">webpack-入口与输出</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/02/webpack-%E6%A8%A1%E5%9D%97%E6%A6%82%E5%BF%B5/">webpack-模块概念</a>
+          </li>
+        
+          <li>
             <a href="/2020/10/26/webpack-start/">webpack-start</a>
           </li>
         
@@ -180,10 +247,6 @@ we" />
             <a href="/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/">flutter 动画</a>
           </li>
         
-          <li>
-            <a href="/2019/11/15/hello-world/">Hello World</a>
-          </li>
-        
       </ul>
     </div>
   </aside>
@@ -193,7 +256,7 @@ we" />
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -202,7 +265,7 @@ we" />
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/android/" style="font-size: 10px;">android</a>
+      <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
     </div>
   </aside>
 
