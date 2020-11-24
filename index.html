@@ -69,6 +69,330 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-webpack-图片打包" class="post-webpack-图片打包 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/11/24/webpack-%E5%9B%BE%E7%89%87%E6%89%93%E5%8C%85/">webpack-图片打包</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/24/webpack-%E5%9B%BE%E7%89%87%E6%89%93%E5%8C%85/" data-id="ckhvndihk000b7gus5jxg3f81" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="打包图片"><a href="#打包图片" class="headerlink" title="打包图片"></a>打包图片</h2><p>使用的loader,url-loader, file-loader, html-loader。</p>
+<p>url-loader,依赖于file-loader,识别图片并转换，并且可以决定图片以什么方式打包。</p>
+<p>如下，limit,小于10k则把图片转化成base64方式显示在网页。大于10k则以图片导入。<br>name属性控制图片名称，’[limit:10].[etx]’,<strong>[hash:10]</strong>图片以hash值前10位为名，<strong>[etx]</strong>扩展名为图片原扩展名。</p>
+<p>html-loader,把转化的图片文件等添加到html文件。</p>
+<p>html-loader</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    options: &#123;</span><br><span class="line">        limit: <span class="number">10</span>*<span class="number">1024</span>,</span><br><span class="line">        name: <span class="string">'[hash:10].[etx]'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>完整的配置文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> template = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    mode: <span class="string">'development'</span>,</span><br><span class="line">    context: path.resolve(__dirname, <span class="string">'./webpack-image'</span>),</span><br><span class="line">    entry: <span class="string">'./src/index.js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: <span class="string">'./main.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'style-loader'</span>,</span><br><span class="line">                    <span class="string">'css-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.(jpg|png|gif)$/</span>,</span><br><span class="line">                loader: <span class="string">'url-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    limit : <span class="number">10</span> * <span class="number">1024</span>,</span><br><span class="line">                    name: <span class="string">'[hash:10].[ext]'</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.html$/</span>,</span><br><span class="line">                loader: <span class="string">'html-loader'</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> template(&#123;</span><br><span class="line">            template: path.resolve(__dirname, <span class="string">'./src/index.html'</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">    </span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/11/24/webpack-%E5%9B%BE%E7%89%87%E6%89%93%E5%8C%85/">
+    <time datetime="2020-11-24T03:31:24.000Z" class="entry-date">
+        2020-11-24
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-webpack-plugin-初识" class="post-webpack-plugin-初识 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/11/24/webpack-plugin-%E5%88%9D%E8%AF%86/">webpack-plugin-初始</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/24/webpack-plugin-%E5%88%9D%E8%AF%86/" data-id="ckhvndihh00097gus6554ei10" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="webpack-plugin"><a href="#webpack-plugin" class="headerlink" title="webpack-plugin"></a>webpack-plugin</h2><p>loader，通常就是扮演一个翻译角色。<br>plugin可以做到比loader更复杂的功能。</p>
+<h2 id="第一个plugin配置使用"><a href="#第一个plugin配置使用" class="headerlink" title="第一个plugin配置使用"></a>第一个plugin配置使用</h2><p>第一个plugin就是html-webpack-plugin,这个插件的作用就是复刻一个index.html模板到dist目录下,并把依赖都自动载入到index.html中,再配合webpack-dev-server使用事就很方便了。</p>
+<p>步骤：</p>
+<ol>
+<li>安装html-webpack-plugin</li>
+<li>导入html-webpack-plugin</li>
+<li>实例化，并配置模板路径</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> template = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    mode:: <span class="string">'development'</span>,</span><br><span class="line">    context: path.resolve(__dirname,  <span class="string">'./webpack-html-plugin'</span>),</span><br><span class="line">    entry: <span class="string">'./src/index.js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">'main.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    modules: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                use:[</span><br><span class="line">                    <span class="string">'style-loader'</span>,</span><br><span class="line">                    <span class="string">'css-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: &#123;</span><br><span class="line">        <span class="keyword">new</span> template(</span><br><span class="line">            &#123;</span><br><span class="line">                template: <span class="string">'./src/index.html'</span></span><br><span class="line">            &#125;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/11/24/webpack-plugin-%E5%88%9D%E8%AF%86/">
+    <time datetime="2020-11-24T01:47:19.000Z" class="entry-date">
+        2020-11-24
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-vue源码阅读一" class="post-vue源码阅读一 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/">vue源码阅读一</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/" data-id="ckhvndihg00087gus9iq6aqg0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="构建源码阅读环境"><a href="#构建源码阅读环境" class="headerlink" title="构建源码阅读环境"></a>构建源码阅读环境</h2><p>构建一个最简单的源码环境只需要一个vue.js文件即可。<br>工程化的vue源码项目会添加了很多其他东西，比如flow类型检测,个人觉得工程化是个很复杂的，会多了很多其他干扰。<br>我们的目标是读源码，所以只需要最简单的，纯粹源码文件即可。<br>工程只作为辅助作用，以后可以学习工程的设计思想，或者根据功能，单独的学习，比如工具类。</p>
+<p>开始读源码，参考了一些资料。<br>比如工程搭建，就是看了参考一，当时内心就是这样😮。</p>
+<ul>
+<li><p><a href="https://github.com/qq281113270/vue" target="_blank" rel="noopener">参考一</a></p>
+</li>
+<li><p><a href="http://hcysun.me/vue-design/zh/essence-of-comp.html" target="_blank" rel="noopener">参考二</a></p>
+</li>
+</ul>
+<p>计划就是，边看边补，不明白的地方就是需要补充的知识点。</p>
+<p>所以读源码就要开始啦。</p>
+<h2 id="hello-word"><a href="#hello-word" class="headerlink" title="hello word"></a>hello word</h2><p>先用npm下载vue包然后再dist目录下找到打包好的vue.js文件。</p>
+<p><img src="/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/vue.png" alt="vue.js"></p>
+<p>创建一个文件夹，文件夹内创建一个html文件，然后引入vue.js。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src = <span class="string">"vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<p>第一步new 一个 Vue。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue();</span><br><span class="line"><span class="built_in">console</span>.log(app);</span><br></pre></td></tr></table></figure>
+
+<p>可以看到一个vue对象下有很多属性<br><img src="/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/new-vue.jpg" alt="new-vue"></p>
+<p>打开vue.js,可以看到这是一个立即执行函数.只看输入与输出，函数接收两个参数，<br>输出一个Vue对象。</p>
+<p>两个参数，<br>global: this即window对象<br>factory：自执行函数传入的一个函数，超级长的函数，几乎全部逻辑都在这个函数。从名字可以看出是一个工厂函数，所以需要使用关键字new创建一个vue对象。</p>
+<p>第七行，判断是否使用es6-module引入vue.<br>第八行，判断是否amd引用方式。<br>第九行，判断是否用script方式引入vue,是则在Window对象下添加Vue属性，Vue等于factory()的返回值。</p>
+<p>如果不使用关键字new,则会有一个报错。在633行和5077行。</p>
+<p>633行调用的报错函数输出</p>
+<p>我们去5077行看，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Vue</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Vue)</span><br><span class="line">  ) &#123;</span><br><span class="line">    warn(<span class="string">'Vue is a constructor and should be called with the `new` keyword'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>._init(options);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到Vue是个函数，判断this是否是Vue的实例，不是则报错，此时打印this是undefined,所以undefined._init()会报错。</p>
+<p>执行流程就是在引入vue.js，就会执行立即执行函数，立即执行函数会在window对象下增加一个Vue属性。Vue的属性是一个函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>: &#123;</span><br><span class="line">    Vue: <span class="function"><span class="keyword">function</span> <span class="title">Vue</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Vue)</span><br><span class="line">    ) &#123;</span><br><span class="line">      warn(<span class="string">'Vue is a constructor and should be called with the `new` keyword'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>._init(options);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>证明：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.Vue)</span><br></pre></td></tr></table></figure>
+
+<p>接着就是new一个Vue的事，new 出来的对象带的这么多属性是怎么加上去的呢？</p>
+<p>我们可以在返回new对象之前打一个断点,可以看到Vue构造函数的prototype已经添加了很多的方法。</p>
+<p><img src="/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/vue.prototype.jpg" alt="vue.prototype"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">$<span class="keyword">delete</span>: ƒ del(target, key)</span><br><span class="line">$destroy: ƒ ()</span><br><span class="line">$emit: ƒ (event)</span><br><span class="line">$forceUpdate: ƒ ()</span><br><span class="line">$mount: ƒ ( el, hydrating )</span><br><span class="line">$nextTick: ƒ (fn)</span><br><span class="line">$off: ƒ (event, fn)</span><br><span class="line">$on: ƒ (event, fn)</span><br><span class="line">$once: ƒ (event, fn)</span><br><span class="line">$<span class="keyword">set</span>: ƒ (target, key, val)</span><br><span class="line">$watch: ƒ ( expOrFn, cb, options )</span><br><span class="line">__patch__: ƒ patch(oldVnode, vnode, hydrating, removeOnly)</span><br><span class="line">_b: ƒ bindObjectProps( data, tag, value, asProp, isSync )</span><br><span class="line">_d: ƒ bindDynamicKeys(baseObj, values)</span><br><span class="line">_e: ƒ (text)</span><br><span class="line">_f: ƒ resolveFilter(id)</span><br><span class="line">_g: ƒ bindObjectListeners(data, value)</span><br><span class="line">_i: ƒ looseIndexOf(arr, val)</span><br><span class="line">_init: ƒ (options)</span><br><span class="line">_k: ƒ checkKeyCodes( eventKeyCode, key, builtInKeyCode, eventKeyName, builtInKeyName )</span><br><span class="line">_l: ƒ renderList( val, render )</span><br><span class="line">_m: ƒ renderStatic( index, isInFor )</span><br><span class="line">_n: ƒ toNumber(val)</span><br><span class="line">_o: ƒ markOnce( tree, index, key )</span><br><span class="line">_p: ƒ prependModifier(value, symbol)</span><br><span class="line">_q: ƒ looseEqual(a, b)</span><br><span class="line">_render: ƒ ()</span><br><span class="line">_s: ƒ toString(val)</span><br><span class="line">_t: ƒ renderSlot( name, fallback, props, bindObject )</span><br><span class="line">_u: ƒ resolveScopedSlots( fns, // see flow/vnode res, // the following are added in 2.6 hasDynamicKeys, contentHashKey )</span><br><span class="line">_update: ƒ (vnode, hydrating)</span><br><span class="line">_v: ƒ createTextVNode(val)</span><br><span class="line">$data: (...)</span><br><span class="line">$isServer: (...)</span><br><span class="line">$props: (...)</span><br><span class="line">$ssrContext: (...)</span><br><span class="line"><span class="keyword">constructor</span>: ƒ Vue(options)</span><br><span class="line"><span class="keyword">get</span> $data: ƒ ()</span><br><span class="line"><span class="keyword">set</span> $data: ƒ ()</span><br><span class="line"><span class="keyword">get</span> $isServer: ƒ ()</span><br><span class="line"><span class="keyword">get</span> $props: ƒ ()</span><br><span class="line"><span class="keyword">set</span> $props: ƒ ()</span><br><span class="line"><span class="keyword">get</span> $ssrContext: ƒ ()</span><br><span class="line">__proto__: Object</span><br></pre></td></tr></table></figure>
+
+<p>在new Vue的时候会执行_init方法。接下来看_init方法做了什么。</p>
+<p>执行new Vue时，this = {}</p>
+<p>4411 watcher</p>
+<blockquote>
+<p>关于new一个对象。</p>
+</blockquote>
+<p>new 一个对象需要构造函数，构造函数，顾名思义是个函数。</p>
+<blockquote>
+<p>自执行函数做了什么事</p>
+</blockquote>
+<p>1.返回Vue构造函数。构造函数的原型对象的方法和属性是什么时候加上去的。<br>答案是在执行自执行函数的时候。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">initMixin(Vue);</span><br><span class="line">stateMixin(Vue);</span><br><span class="line">eventsMixin(Vue);</span><br><span class="line">lifecycleMixin(Vue);</span><br><span class="line">renderMixin(Vue);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>initMinx()</p>
+</blockquote>
+<p>执行的第一个函数，设置了$options属性</p>
+<blockquote>
+<p>stateMixin();</p>
+</blockquote>
+<p>分别设置了$data,$props属性，设置了$set, $delete, $watch方法.</p>
+<p>$data和$props属性的set方法重写。提示了这两个属性都是只读。<br>get方法只分别返回 this._data, this._props。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">dataDef.get = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>._data &#125;;</span><br><span class="line"><span class="keyword">var</span> propsDef = &#123;&#125;;</span><br><span class="line">propsDef.get = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>._props &#125;;</span><br><span class="line">&#123;</span><br><span class="line">  dataDef.set = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    warn(</span><br><span class="line">      <span class="string">'Avoid replacing instance root $data. '</span> +</span><br><span class="line">      <span class="string">'Use nested data properties instead.'</span>,</span><br><span class="line">      <span class="keyword">this</span></span><br><span class="line">    );</span><br><span class="line">  &#125;;</span><br><span class="line">  propsDef.set = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    warn(<span class="string">"$props is readonly."</span>, <span class="keyword">this</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Vue.prototype, <span class="string">'$data'</span>, dataDef);</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Vue.prototype, <span class="string">'$props'</span>, propsDef);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>eventMixin<br>设置了$on,$once,$off,$emit方法</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>设置了$forceUpdate , $destroy方法</p>
+<blockquote>
+<p>renderMixin</p>
+</blockquote>
+<p>设置了$nextTick方法。<br>其中有个函数加了很多帮助方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">installRenderHelpers(Vue.prototype)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">installRenderHelpers</span> (<span class="params">target</span>) </span>&#123;</span><br><span class="line">  target._o = markOnce;</span><br><span class="line">  target._n = toNumber;</span><br><span class="line">  target._s = toString;</span><br><span class="line">  target._l = renderList;</span><br><span class="line">  target._t = renderSlot;</span><br><span class="line">  target._q = looseEqual;</span><br><span class="line">  target._i = looseIndexOf;</span><br><span class="line">  target._m = renderStatic;</span><br><span class="line">  target._f = resolveFilter;</span><br><span class="line">  target._k = checkKeyCodes;</span><br><span class="line">  target._b = bindObjectProps;</span><br><span class="line">  target._v = createTextVNode;</span><br><span class="line">  target._e = createEmptyVNode;</span><br><span class="line">  target._u = resolveScopedSlots;</span><br><span class="line">  target._g = bindObjectListeners;</span><br><span class="line">  target._d = bindDynamicKeys;</span><br><span class="line">  target._p = prependModifier;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/">
+    <time datetime="2020-11-10T06:20:47.000Z" class="entry-date">
+        2020-11-10
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-%E6%BA%90%E7%A0%81/" rel="tag">vue 源码</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-webpack-loader" class="post-webpack-loader post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/11/05/webpack-loader/">webpack-loader</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/05/webpack-loader/" data-id="ckhvndihf00057gus32l85bil" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="loader是第三方模块"><a href="#loader是第三方模块" class="headerlink" title="loader是第三方模块"></a>loader是第三方模块</h2><h2 id="loader的作用"><a href="#loader的作用" class="headerlink" title="loader的作用"></a>loader的作用</h2><p>webpack核心思想， 一切皆模块。要把一切都当作模块，则需要loader转化。</p>
+<p>webpack只认识js文件，要打包css,图片文件。需要loader转换成webpack所认识的格式。</p>
+<p>减少了依赖关系，工程管理依赖，不需要人工操作。</p>
+<h2 id="加载一个css文件"><a href="#加载一个css文件" class="headerlink" title="加载一个css文件"></a>加载一个css文件</h2><ol>
+<li>创建文件</li>
+</ol>
+<p>webpack-loader<br>  -src<br>    index.css<br>  index.js</p>
+<blockquote>
+<p>index.js</p>
+</blockquote>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./src/index.css'</span></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">'&lt;h1&gt;webpack loader&lt;/h1&gt;'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>  index.css<br>  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: aquamarine;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>webpack.config.js</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    mode: <span class="string">'development'</span>,</span><br><span class="line">    context: path.join(__dirname, <span class="string">'./webpack-loader'</span>),</span><br><span class="line">    entry: <span class="string">'./index.js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">'./main.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        publicPath: <span class="string">'./dist'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行npm run build 发现报错，这是因为没有安装loader</p>
+<p><img src="/2020/11/05/webpack-loader/error.jpg" alt="报错"></p>
+<ol start="2">
+<li>配置css-loader</li>
+</ol>
+<p>loader都是第三方模块，先安装css-loader</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i css-loader -D</span><br></pre></td></tr></table></figure>
+
+<p>webpack.config.js配置loader</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    ...,</span><br><span class="line">    <span class="built_in">module</span>: &#123; <span class="comment">// 一切皆模块</span></span><br><span class="line">        rules: [ <span class="comment">// 数组表示不同模块，转换规则不一样</span></span><br><span class="line">            &#123;   <span class="comment">// 对象才能更好描述如何配置</span></span><br><span class="line">                test: <span class="regexp">/\.css$/</span>, <span class="comment">// 匹配到模块，才能使用该loader</span></span><br><span class="line">                use: [ <span class="string">'css-loader'</span>] <span class="comment">// 使用什么loader处理</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在运行npm run dev, 发现打包成功但是效果没有显示。这是因为还需要使用style-loader.<br>css-loader和style-loader会一起使用。</p>
+<ol start="3">
+<li>配置style-loader</li>
+</ol>
+<p>安装style-loader</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i style-loader -D</span><br></pre></td></tr></table></figure>
+
+<p>在webpack.config.js的use配置style-loader</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use:[<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>] <span class="comment">//先后顺序注意</span></span><br></pre></td></tr></table></figure>
+
+<p>配置是有先后顺序的，webpack使用多个loader时，会从后往前执行，内部用loader的链式调用。</p>
+<p>先用css-loader转换， 然后使用style-loader。</p>
+<p>即loader(styleLoader(cssLoader(index.css)))</p>
+<h2 id="其他配置属性"><a href="#其他配置属性" class="headerlink" title="其他配置属性"></a>其他配置属性</h2><blockquote>
+<p>include 和 exclude</p>
+</blockquote>
+<blockquote>
+<p>issuer 和 resource</p>
+</blockquote>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/11/05/webpack-loader/">
+    <time datetime="2020-11-05T02:24:20.000Z" class="entry-date">
+        2020-11-05
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-webpack-入口与输出" class="post-webpack-入口与输出 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -84,13 +408,20 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/04/webpack-%E5%85%A5%E5%8F%A3%E4%B8%8E%E8%BE%93%E5%87%BA/" data-id="ckh2qbnzy00052kusbvyvao8j" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/04/webpack-%E5%85%A5%E5%8F%A3%E4%B8%8E%E8%BE%93%E5%87%BA/" data-id="ckhvndihe00047gus05f8d12k" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h2 id="入口（entry）"><a href="#入口（entry）" class="headerlink" title="入口（entry）"></a>入口（entry）</h2>
+        <h2 id="上下文（context）"><a href="#上下文（context）" class="headerlink" title="上下文（context）"></a>上下文（context）</h2><p>context使用绝对路径，</p>
+<p>context与entry相关联，</p>
+<p>context有默认值，默认为当前工程的根目录</p>
+<h2 id="入口（entry）"><a href="#入口（entry）" class="headerlink" title="入口（entry）"></a>入口（entry）</h2><h2 id="输出（output）"><a href="#输出（output）" class="headerlink" title="输出（output）"></a>输出（output）</h2><ol>
+<li>filename</li>
+</ol>
+<p>2.</p>
+
       
     </div><!-- .entry-content -->
 
@@ -102,6 +433,9 @@
 </a>
     
     
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+
     </footer>
 </article>
 
@@ -126,7 +460,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/02/webpack-%E6%A8%A1%E5%9D%97%E6%A6%82%E5%BF%B5/" data-id="ckh2qbnzr00012kus9pu30zj5" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/02/webpack-%E6%A8%A1%E5%9D%97%E6%A6%82%E5%BF%B5/" data-id="ckhvndihc00037guscbw7c1uz" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -229,6 +563,9 @@
 </a>
     
     
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/" rel="tag">webpack</a></li></ul>
+
     </footer>
 </article>
 
@@ -253,7 +590,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/26/webpack-start/" data-id="ckh2qbnzv00032kus8s04559p" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/26/webpack-start/" data-id="ckhvndih900017guscqzm8hdm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -364,7 +701,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/26/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" data-id="ckh2qbnzl00002kus9lqxbrfi" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/26/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" data-id="ckhvndih300007gus5pzcay99" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -397,6 +734,10 @@
 
 <p>就会自动生成一个放静态图片的资源文件夹</p>
 <p><img src="/2020/10/26/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/hexo.jpg" alt="hexo插入图片"></p>
+<ol start="5">
+<li>发布</li>
+</ol>
+<p>有时deploy上去的内容与本地不一样，可以先执行 clean清除缓存, 再deploy</p>
 
       
     </div><!-- .entry-content -->
@@ -436,14 +777,51 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/" data-id="ckh2qbnzw00042kus4rxw9yui" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/" data-id="ckhvndihm000d7guseb9k6l9h" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
         <h2 id="customPaint"><a href="#customPaint" class="headerlink" title="customPaint"></a>customPaint</h2><p>自绘组件可以使用customPaint组件绘制</p>
-<h2 id="动画快速入门"><a href="#动画快速入门" class="headerlink" title="动画快速入门"></a>动画快速入门</h2><h2 id="border家族"><a href="#border家族" class="headerlink" title="border家族"></a>border家族</h2><pre><code>ShapeBorder
+<h2 id="动画快速入门"><a href="#动画快速入门" class="headerlink" title="动画快速入门"></a>动画快速入门</h2><p>动画核心是AnimationController</p>
+<p>AnimationController 有四种状态：</p>
+<ol>
+<li>forward 开始动画</li>
+<li>reverse 反转动画</li>
+<li>complete 在结尾停止动画</li>
+<li>dismissed 在动画开始停止时</li>
+</ol>
+<p>AnimationController 有多种动作：</p>
+<ol>
+<li>forward</li>
+<li>repeat</li>
+<li>stop</li>
+<li>dispose</li>
+</ol>
+<p>套路是用AnimationController控制属性值,通常是在initState设置controller的动作。</p>
+<ol>
+<li>初始化AnimationController</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">initState() &#123;</span><br><span class="line">    c = AnimationController(vsync: <span class="keyword">this</span>, durantion: <span class="built_in">Duration</span>(milliseconds: <span class="number">500</span>))..addListen(()&#123;</span><br><span class="line">        <span class="comment">// 动画开始就会被监听到</span></span><br><span class="line">        setState()&#123;</span><br><span class="line">            size = <span class="number">100</span> + <span class="number">100</span> * c.value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    ..addStatusListener((statues) &#123;</span><br><span class="line">        <span class="comment">// 监听动画的多个状态，并在不同的状态做不同的处理</span></span><br><span class="line">        <span class="keyword">switch</span> (status) &#123;</span><br><span class="line">            <span class="keyword">case</span> AnimationStatus.completed:</span><br><span class="line">            animationController.reverse();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> AnimationStatus.dismissed:</span><br><span class="line">            animationController.forward();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>设置对应的变化属性到对象上</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Container(</span><br><span class="line">    width: _size,</span><br><span class="line">    height: _size, 变化属性</span><br><span class="line">    color: animationColor.value,</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>设置触发事件</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MaterialButton(</span><br><span class="line">    onPressed: () &#123;</span><br><span class="line">    animationController.forward();</span><br><span class="line">    &#125;,</span><br><span class="line">    child: Text(<span class="string">'sizeAnimation'</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Tween变化"><a href="#Tween变化" class="headerlink" title="Tween变化"></a>Tween变化</h2><p>flutter内置很多tween用于处理不同类型的值，比如颜色，border。</p>
+<p>@init 这里会返回一系列BorderRadiusTween.value,是BorderRadius对象实例，把返回的值放到对应的BorderRadius盒子属性即可。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">animationBorder = BorderRadiusTween(</span><br><span class="line">        begin: BorderRadius.all(Radius.circular(<span class="number">0</span>)),</span><br><span class="line">        end: BorderRadius.all(Radius.circular(<span class="number">50</span>)))</span><br><span class="line">    .animate(animationController);</span><br></pre></td></tr></table></figure>
+<p>@build</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Row(</span><br><span class="line">    mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">    children: &lt;Widget&gt;[</span><br><span class="line">    Container(</span><br><span class="line">        margin: EdgeInsets.only(top: <span class="number">10</span>),</span><br><span class="line">        width: <span class="number">100</span>,</span><br><span class="line">        height: <span class="number">100</span>,</span><br><span class="line">        decoration: BoxDecoration(</span><br><span class="line">            color: Colors.deepPurple,</span><br><span class="line">            border: Border.all(width: <span class="number">1</span>, color: Colors.transparent),</span><br><span class="line">            borderRadius: animationBorder.value),</span><br><span class="line">    )</span><br><span class="line">    ],</span><br><span class="line">),</span><br><span class="line">MaterialButton(</span><br><span class="line">    onPressed: () &#123;</span><br><span class="line">    animationController.forward();</span><br><span class="line">    &#125;,</span><br><span class="line">    child: Text(<span class="string">'borderRaduis'</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>ColorTween</p>
+<h2 id="border家族"><a href="#border家族" class="headerlink" title="border家族"></a>border家族</h2><pre><code>ShapeBorder
     |
 BoxBorder
   /   \</code></pre><p>Border     BorderDirectional</p>
@@ -460,7 +838,7 @@ BoxBorder
     
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/" rel="tag">android</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/" rel="tag">flutter</a></li></ul>
 
     </footer>
 </article>
@@ -486,7 +864,7 @@ BoxBorder
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2019/11/15/hello-world/" data-id="ckh2qbnzz00082kus4v1ehi0o" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2019/11/15/hello-world/" data-id="ckhvndiho000g7gusaxtch1wr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -555,23 +933,23 @@ BoxBorder
       <ul>
         
           <li>
+            <a href="/2020/11/24/webpack-%E5%9B%BE%E7%89%87%E6%89%93%E5%8C%85/">webpack-图片打包</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/24/webpack-plugin-%E5%88%9D%E8%AF%86/">webpack-plugin-初始</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/">vue源码阅读一</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/05/webpack-loader/">webpack-loader</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/04/webpack-%E5%85%A5%E5%8F%A3%E4%B8%8E%E8%BE%93%E5%87%BA/">webpack-入口与输出</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/02/webpack-%E6%A8%A1%E5%9D%97%E6%A6%82%E5%BF%B5/">webpack-模块概念</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/26/webpack-start/">webpack-start</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/26/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">hexo使用笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/">flutter 动画</a>
           </li>
         
       </ul>
@@ -583,7 +961,7 @@ BoxBorder
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-%E6%BA%90%E7%A0%81/" rel="tag">vue 源码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a><span class="tag-list-count">6</span></li></ul>
     </div>
   </aside>
 
@@ -592,7 +970,7 @@ BoxBorder
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+      <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/vue-%E6%BA%90%E7%A0%81/" style="font-size: 10px;">vue 源码</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a>
     </div>
   </aside>
 
