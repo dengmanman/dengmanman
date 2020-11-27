@@ -4,22 +4,6 @@
   <meta charset="utf-8">
   
   
-  <meta name="description" content="hexo中插入图片
-安装hexo-asset-image
-
-1npm i hexo-asset-image -s
-
-
-更改_config.yml配置文件43行
-
-1post_asset_folder: true
-
-
-修改hxo-asset-image源码
-
-文件目录
-···bash/node_mod" />
-  
 
   
   
@@ -27,20 +11,14 @@
   
   
   
-  <title>hexo使用笔记 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo中插入图片 安装hexo-asset-image  1npm i hexo-asset-image -s   更改_config.yml配置文件43行  1post_asset_folder: true   修改hxo-asset-image源码  文件目录 ···bash&#x2F;node_modules&#x2F;hexo-asset-image&#x2F;index.js··· 参考链接 插入图片 注意更新后需">
-<meta name="keywords" content="hexo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hexo使用笔记">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;26&#x2F;hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0&#x2F;index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="hexo中插入图片 安装hexo-asset-image  1npm i hexo-asset-image -s   更改_config.yml配置文件43行  1post_asset_folder: true   修改hxo-asset-image源码  文件目录 ···bash&#x2F;node_modules&#x2F;hexo-asset-image&#x2F;index.js··· 参考链接 插入图片 注意更新后需">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;26&#x2F;hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0&#x2F;hexo.jpg">
-<meta property="og:updated_time" content="2020-11-04T01:42:04.272Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;26&#x2F;hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0&#x2F;hexo.jpg">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -89,15 +67,17 @@
 </header>
 
       <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-hexo使用笔记" class="post-hexo使用笔记 post type-post status-publish format-standard hentry">
+        <div id="primary" class="site-content"><div id="content" role="main">
+  
+    <article id="post-hexo使用笔记" class="post-hexo使用笔记 post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
         
         
   
-    <h1 class="entry-title article-title">
-      hexo使用笔记
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/10/26/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">hexo使用笔记</a>
     </h1>
   
 
@@ -160,22 +140,166 @@
 </article>
 
 
+
+
+
+
+  
+    <article id="post-flutter-动画" class="post-flutter-动画 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/">flutter 动画</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/" data-id="cki03fkbh000m44usdacn0jhf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="customPaint"><a href="#customPaint" class="headerlink" title="customPaint"></a>customPaint</h2><p>自绘组件可以使用customPaint组件绘制</p>
+<h2 id="动画快速入门"><a href="#动画快速入门" class="headerlink" title="动画快速入门"></a>动画快速入门</h2><p>动画核心是AnimationController</p>
+<p>AnimationController 有四种状态：</p>
+<ol>
+<li>forward 开始动画</li>
+<li>reverse 反转动画</li>
+<li>complete 在结尾停止动画</li>
+<li>dismissed 在动画开始停止时</li>
+</ol>
+<p>AnimationController 有多种动作：</p>
+<ol>
+<li>forward</li>
+<li>repeat</li>
+<li>stop</li>
+<li>dispose</li>
+</ol>
+<p>套路是用AnimationController控制属性值,通常是在initState设置controller的动作。</p>
+<ol>
+<li>初始化AnimationController</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">initState() &#123;</span><br><span class="line">    c = AnimationController(vsync: <span class="keyword">this</span>, durantion: <span class="built_in">Duration</span>(milliseconds: <span class="number">500</span>))..addListen(()&#123;</span><br><span class="line">        <span class="comment">// 动画开始就会被监听到</span></span><br><span class="line">        setState()&#123;</span><br><span class="line">            size = <span class="number">100</span> + <span class="number">100</span> * c.value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    ..addStatusListener((statues) &#123;</span><br><span class="line">        <span class="comment">// 监听动画的多个状态，并在不同的状态做不同的处理</span></span><br><span class="line">        <span class="keyword">switch</span> (status) &#123;</span><br><span class="line">            <span class="keyword">case</span> AnimationStatus.completed:</span><br><span class="line">            animationController.reverse();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> AnimationStatus.dismissed:</span><br><span class="line">            animationController.forward();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>设置对应的变化属性到对象上</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Container(</span><br><span class="line">    width: _size,</span><br><span class="line">    height: _size, 变化属性</span><br><span class="line">    color: animationColor.value,</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>设置触发事件</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MaterialButton(</span><br><span class="line">    onPressed: () &#123;</span><br><span class="line">    animationController.forward();</span><br><span class="line">    &#125;,</span><br><span class="line">    child: Text(<span class="string">'sizeAnimation'</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Tween变化"><a href="#Tween变化" class="headerlink" title="Tween变化"></a>Tween变化</h2><p>flutter内置很多tween用于处理不同类型的值，比如颜色，border。</p>
+<p>@init 这里会返回一系列BorderRadiusTween.value,是BorderRadius对象实例，把返回的值放到对应的BorderRadius盒子属性即可。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">animationBorder = BorderRadiusTween(</span><br><span class="line">        begin: BorderRadius.all(Radius.circular(<span class="number">0</span>)),</span><br><span class="line">        end: BorderRadius.all(Radius.circular(<span class="number">50</span>)))</span><br><span class="line">    .animate(animationController);</span><br></pre></td></tr></table></figure>
+<p>@build</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Row(</span><br><span class="line">    mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">    children: &lt;Widget&gt;[</span><br><span class="line">    Container(</span><br><span class="line">        margin: EdgeInsets.only(top: <span class="number">10</span>),</span><br><span class="line">        width: <span class="number">100</span>,</span><br><span class="line">        height: <span class="number">100</span>,</span><br><span class="line">        decoration: BoxDecoration(</span><br><span class="line">            color: Colors.deepPurple,</span><br><span class="line">            border: Border.all(width: <span class="number">1</span>, color: Colors.transparent),</span><br><span class="line">            borderRadius: animationBorder.value),</span><br><span class="line">    )</span><br><span class="line">    ],</span><br><span class="line">),</span><br><span class="line">MaterialButton(</span><br><span class="line">    onPressed: () &#123;</span><br><span class="line">    animationController.forward();</span><br><span class="line">    &#125;,</span><br><span class="line">    child: Text(<span class="string">'borderRaduis'</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>ColorTween</p>
+<h2 id="border家族"><a href="#border家族" class="headerlink" title="border家族"></a>border家族</h2><pre><code>ShapeBorder
+    |
+BoxBorder
+  /   \</code></pre><p>Border     BorderDirectional</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/">
+    <time datetime="2020-10-19T02:42:36.000Z" class="entry-date">
+        2020-10-19
+    </time>
+</a>
     
-<nav class="nav-single">
-    <h3 class="assistive-text">文章导航</h3>
     
-        <span class="nav-previous"><a href="/2020/10/26/webpack-start/" rel="prev"><span class="meta-nav">←</span> webpack-start</a></span>
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/" rel="tag">flutter</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-hello-world" class="post-hello-world post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2019/11/15/hello-world/">Hello World</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2019/11/15/hello-world/" data-id="cki03fkb6000c44us3wjid9v3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>在_config.yml文件下的34行设置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year-:month-:day-:title.md</span> <span class="comment"># File name of new posts</span></span><br></pre></td></tr></table></figure>
+
+<p>执行下列命令可以创建新的写作文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new webpack-start</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2019/11/15/hello-world/">
+    <time datetime="2019-11-15T09:08:55.482Z" class="entry-date">
+        2019-11-15
+    </time>
+</a>
     
     
-        <span class="nav-next"><a href="/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/" rel="next">flutter 动画 <span class="meta-nav">→</span></a></span>
-    
-</nav><!-- .nav-single -->
+    </footer>
+</article>
 
 
 
 
 
 
+  
+  
+    <nav id="pagination">
+      <nav id="page-nav">
+        <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      </nav>
+    </nav>
+  
 
 </div></div>
         <div id="secondary" class="widget-area" role="complementary">

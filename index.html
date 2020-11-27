@@ -69,6 +69,244 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-css3-线性渐变" class="post-css3-线性渐变 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/11/26/css3-%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98/">css3-线性渐变</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/26/css3-%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98/" data-id="cki03fkb2000844usdnj16kdh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h2><blockquote>
+<p>linear-gradient</p>
+</blockquote>
+<p>文字带下划线</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.demo01&#123;</span><br><span class="line">    display: inline;</span><br><span class="line">    padding-bottom: 5px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    line-height: 25px;</span><br><span class="line">    color: #fff;</span><br><span class="line">    background-image: linear-gradient(180deg, transparent, transparent 94%,#0babf5 98%, rgb(232, 221, 238));</span><br><span class="line">    background-size: 1px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="www.baidu.com">例子</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/11/26/css3-%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98/">
+    <time datetime="2020-11-26T07:19:18.000Z" class="entry-date">
+        2020-11-26
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-css3-线性渐变/demo01" class="post-css3-线性渐变/demo01 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/11/26/css3-%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98/demo01/">css3-线性渐变/demo01</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/26/css3-%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98/demo01/" data-id="cki03fkbi000n44usdw7407b3" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linear-gradient</title>
+    <style>
+        .demo01{
+            display: inline;
+            padding-bottom: 5px;
+            height: 100px;
+            line-height: 25px;
+            color: #fff;
+            background-image: linear-gradient(180deg, transparent, transparent 94%,#0babf5 98%, rgb(232, 221, 238));
+            background-size: 1px;
+        }
+        .demo02{
+            width: 300px;
+            height: 300px;
+            background-image: 
+            linear-gradient(45deg,red 25%, transparent 25%), 
+            linear-gradient(45deg, transparent 75%, rgb(223, 212, 71) 75%),
+            linear-gradient(-45deg, transparent 75%, rgb(66, 39, 185) 75%),
+            linear-gradient(-45deg, rgb(21, 230, 132) 25%, transparent 25%);
+            /* background-size: 100% 100%; */
+        }
+        .demo03{
+            width: 100%;
+            height: 500px;
+            background-image: 
+            linear-gradient(transparent 30%, #ffffff 30%, transparent 31%),
+            linear-gradient(90deg, transparent 30%, #ffffff 30%, transparent 34%);
+            background-size: 5% 5%;
+        }
+        .demo04{
+            width: 500px;
+            height: 500px;
+            background-image: 
+            linear-gradient(45deg, #E1DEB0 25%, transparent 25%, transparent 75%, #E1DEB0 75%, #E1DEB0), 
+            linear-gradient(-45deg, #E1DEB0 26%, transparent 26%, transparent 74%, #E1DEB0 74%, #E1DEB0);
+            background-size: 100px 100px;
+    background-position: 0 0, 50px 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <span class="demo01">
+        构建一个最简单的源码环境只需要一个vue.js文件即可。
+工程化的vue源码项目会添加了很多其他东西，比如flow类型检测,个人觉得工程化是个很复杂的，会多了很多其他干扰。
+    </span>
+    <div class="demo02">
+        const a = 20
+    </div>
+    <h2>条纹背景</h2>
+    <p>条纹使用需要注意的地方</p>
+    <p>1.渐变至少需要3%才能显示，例如这么使用linear-gradient(#000 1%, translate 3%)或者linear-gradient(#000 3%, transparent 3%)</p>
+    <p>2.后面颜色比前面颜色的渐变数值小，例如linear-gradient(#000 5%, #dd0000 2%),这个等效于linear-gradient(#000 5%, #dd0000 5%)</p>
+    <div class="demo03"></div>
+    <h2>棋盘背景</h2>
+    <div class="demo04"></div>
+</body>
+</html>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/11/26/css3-%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98/demo01/">
+    <time datetime="2020-11-25T16:00:00.000Z" class="entry-date">
+        2020-11-26
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-three.js-几何体" class="post-three.js-几何体 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/11/24/three.js-%E5%87%A0%E4%BD%95%E4%BD%93/">three.js-几何体</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/24/three.js-%E5%87%A0%E4%BD%95%E4%BD%93/" data-id="cki03fkc5000q44usffggavqx" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="three-js"><a href="#three-js" class="headerlink" title="three.js"></a>three.js</h1><h2 id="核心对象"><a href="#核心对象" class="headerlink" title="核心对象"></a>核心对象</h2><ol>
+<li>scene</li>
+<li>material</li>
+<li>mesh</li>
+<li>camera</li>
+<li>render</li>
+</ol>
+<blockquote>
+<p>scene</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> scene = <span class="keyword">new</span> THREE.Scene()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>material</p>
+</blockquote>
+<blockquote>
+<p>mesh<br>mesh就是物体，需要材质和几何体融合。<br>旋转：mesh.rotation.x += 0.01<br>    mesh.rotation.y += 0.01</p>
+</blockquote>
+<blockquote>
+<p>camera</p>
+</blockquote>
+<ol>
+<li>PerspectiveCamera</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> camera = <span class="keyword">new</span> THREE.PerspectiveCamera(<span class="number">60</span>, width/height, <span class="number">0.1</span>, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<p>参数，查看角度，长宽比， 观察最近距离， 观察最远距离。<br>这个相机最符合人类日常观察习惯。</p>
+<blockquote>
+<p>render</p>
+</blockquote>
+<ol>
+<li>WebGLRender<br>用法比较固定，通常只作为渲染<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> renderer = THREE.WebGLRender()</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(renderer.domElement)</span><br><span class="line">renderer.render(mesh, camera)</span><br></pre></td></tr></table></figure>
+坐标问题<br>camera.position.set(0,0,100)<br>这个位置是正视视角。</li>
+</ol>
+<blockquote>
+<p>light</p>
+</blockquote>
+<p>光线，贴图需要使用光线才能看到</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/11/24/three.js-%E5%87%A0%E4%BD%95%E4%BD%93/">
+    <time datetime="2020-11-24T09:54:03.000Z" class="entry-date">
+        2020-11-24
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/three-js/" rel="tag">three.js</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-webpack-图片打包" class="post-webpack-图片打包 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -84,7 +322,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/24/webpack-%E5%9B%BE%E7%89%87%E6%89%93%E5%8C%85/" data-id="ckhvndihk000b7gus5jxg3f81" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/24/webpack-%E5%9B%BE%E7%89%87%E6%89%93%E5%8C%85/" data-id="cki03fkb1000544usevq7emx8" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -137,7 +375,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/24/webpack-plugin-%E5%88%9D%E8%AF%86/" data-id="ckhvndihh00097gus6554ei10" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/24/webpack-plugin-%E5%88%9D%E8%AF%86/" data-id="cki03fkb4000a44us8z8b65zp" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -191,7 +429,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/" data-id="ckhvndihg00087gus9iq6aqg0" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/" data-id="cki03fkaw000144us0bkpde76" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -315,7 +553,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/05/webpack-loader/" data-id="ckhvndihf00057gus32l85bil" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/05/webpack-loader/" data-id="cki03fkcb000t44uschtsgw75" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -408,7 +646,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/04/webpack-%E5%85%A5%E5%8F%A3%E4%B8%8E%E8%BE%93%E5%87%BA/" data-id="ckhvndihe00047gus05f8d12k" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/04/webpack-%E5%85%A5%E5%8F%A3%E4%B8%8E%E8%BE%93%E5%87%BA/" data-id="cki03fkaq000044us6slk7p7v" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -460,7 +698,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/02/webpack-%E6%A8%A1%E5%9D%97%E6%A6%82%E5%BF%B5/" data-id="ckhvndihc00037guscbw7c1uz" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/02/webpack-%E6%A8%A1%E5%9D%97%E6%A6%82%E5%BF%B5/" data-id="cki03fkb7000e44us36mn35mi" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -590,7 +828,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/26/webpack-start/" data-id="ckhvndih900017guscqzm8hdm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/26/webpack-start/" data-id="cki03fkaz000344us47f9a2j6" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -686,230 +924,12 @@
 
 
   
-    <article id="post-hexo使用笔记" class="post-hexo使用笔记 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
   
-    <h1 class="entry-title">
-      <a class="article-title" href="/2020/10/26/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">hexo使用笔记</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/26/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" data-id="ckhvndih300007gus5pzcay99" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h2 id="hexo中插入图片"><a href="#hexo中插入图片" class="headerlink" title="hexo中插入图片"></a>hexo中插入图片</h2><ol>
-<li>安装hexo-asset-image</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-asset-image -s</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>更改_config.yml配置文件43行</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>修改hxo-asset-image源码</li>
-</ol>
-<p>文件目录</p>
-<p>···bash<br>/node_modules/hexo-asset-image/index.js<br>···</p>
-<p>参考链接 <a href="https://www.jianshu.com/p/f72aaad7b852" target="_blank" rel="noopener">插入图片</a></p>
-<p>注意更新后需要重启服务器</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> cheerio = <span class="built_in">require</span>(<span class="string">'cheerio'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPosition</span>(<span class="params">str, m, i</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> version = <span class="built_in">String</span>(hexo.version).split(<span class="string">'.'</span>);</span><br><span class="line">hexo.extend.filter.register(<span class="string">'after_post_render'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> config = hexo.config;</span><br><span class="line">  <span class="keyword">if</span>(config.post_asset_folder)&#123;</span><br><span class="line">        <span class="keyword">var</span> link = data.permalink;</span><br><span class="line">    <span class="keyword">if</span>(version.length &gt; <span class="number">0</span> &amp;&amp; <span class="built_in">Number</span>(version[<span class="number">0</span>]) == <span class="number">3</span>)</span><br><span class="line">       <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">'/'</span>, <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">       <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">'/'</span>, <span class="number">3</span>) + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// In hexo 3.1.1, the permalink of "about" page is like ".../about/index.html".</span></span><br><span class="line">    <span class="keyword">var</span> endPos = link.lastIndexOf(<span class="string">'/'</span>) + <span class="number">1</span>;</span><br><span class="line">    link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> toprocess = [<span class="string">'excerpt'</span>, <span class="string">'more'</span>, <span class="string">'content'</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">      <span class="keyword">var</span> key = toprocess[i];</span><br><span class="line"> </span><br><span class="line">      <span class="keyword">var</span> $ = cheerio.load(data[key], &#123;</span><br><span class="line">        ignoreWhitespace: <span class="literal">false</span>,</span><br><span class="line">        xmlMode: <span class="literal">false</span>,</span><br><span class="line">        lowerCaseTags: <span class="literal">false</span>,</span><br><span class="line">        decodeEntities: <span class="literal">false</span></span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      $(<span class="string">'img'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="keyword">this</span>).attr(<span class="string">'src'</span>))&#123;</span><br><span class="line">            <span class="comment">// For windows style path, we replace '\' to '/'.</span></span><br><span class="line">            <span class="keyword">var</span> src = $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>).replace(<span class="string">'\\'</span>, <span class="string">'/'</span>);</span><br><span class="line">            <span class="keyword">if</span>(!<span class="regexp">/http[s]*.*|\/\/.*/</span>.test(src) &amp;&amp;</span><br><span class="line">               !<span class="regexp">/^\s*\//</span>.test(src)) &#123;</span><br><span class="line">              <span class="comment">// For "about" page, the first part of "src" can't be removed.</span></span><br><span class="line">              <span class="comment">// In addition, to support multi-level local directory.</span></span><br><span class="line">              <span class="keyword">var</span> linkArray = link.split(<span class="string">'/'</span>).filter(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> elem != <span class="string">''</span>;</span><br><span class="line">              &#125;);</span><br><span class="line">              <span class="keyword">var</span> srcArray = src.split(<span class="string">'/'</span>).filter(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> elem != <span class="string">''</span> &amp;&amp; elem != <span class="string">'.'</span>;</span><br><span class="line">              &#125;);</span><br><span class="line">              <span class="keyword">if</span>(srcArray.length &gt; <span class="number">1</span>)</span><br><span class="line">                srcArray.shift();</span><br><span class="line">              src = srcArray.join(<span class="string">'/'</span>);</span><br><span class="line">              $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>, config.root + link + src);</span><br><span class="line">              <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info(<span class="string">"update link as:--&gt;"</span>+config.root + link + src);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info(<span class="string">"no src attr, skipped..."</span>);</span><br><span class="line">            <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info($(<span class="keyword">this</span>));</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      data[key] = $.html();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>使用</li>
-</ol>
-<p>在以后创建项目时，只需要执行new命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post webpack-start</span><br></pre></td></tr></table></figure>
-
-<p>就会自动生成一个放静态图片的资源文件夹</p>
-<p><img src="/2020/10/26/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/hexo.jpg" alt="hexo插入图片"></p>
-<ol start="5">
-<li>发布</li>
-</ol>
-<p>有时deploy上去的内容与本地不一样，可以先执行 clean清除缓存, 再deploy</p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2020/10/26/hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
-    <time datetime="2020-10-26T02:57:54.000Z" class="entry-date">
-        2020-10-26
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-flutter-动画" class="post-flutter-动画 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/">flutter 动画</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/" data-id="ckhvndihm000d7guseb9k6l9h" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h2 id="customPaint"><a href="#customPaint" class="headerlink" title="customPaint"></a>customPaint</h2><p>自绘组件可以使用customPaint组件绘制</p>
-<h2 id="动画快速入门"><a href="#动画快速入门" class="headerlink" title="动画快速入门"></a>动画快速入门</h2><p>动画核心是AnimationController</p>
-<p>AnimationController 有四种状态：</p>
-<ol>
-<li>forward 开始动画</li>
-<li>reverse 反转动画</li>
-<li>complete 在结尾停止动画</li>
-<li>dismissed 在动画开始停止时</li>
-</ol>
-<p>AnimationController 有多种动作：</p>
-<ol>
-<li>forward</li>
-<li>repeat</li>
-<li>stop</li>
-<li>dispose</li>
-</ol>
-<p>套路是用AnimationController控制属性值,通常是在initState设置controller的动作。</p>
-<ol>
-<li>初始化AnimationController</li>
-</ol>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">initState() &#123;</span><br><span class="line">    c = AnimationController(vsync: <span class="keyword">this</span>, durantion: <span class="built_in">Duration</span>(milliseconds: <span class="number">500</span>))..addListen(()&#123;</span><br><span class="line">        <span class="comment">// 动画开始就会被监听到</span></span><br><span class="line">        setState()&#123;</span><br><span class="line">            size = <span class="number">100</span> + <span class="number">100</span> * c.value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    ..addStatusListener((statues) &#123;</span><br><span class="line">        <span class="comment">// 监听动画的多个状态，并在不同的状态做不同的处理</span></span><br><span class="line">        <span class="keyword">switch</span> (status) &#123;</span><br><span class="line">            <span class="keyword">case</span> AnimationStatus.completed:</span><br><span class="line">            animationController.reverse();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> AnimationStatus.dismissed:</span><br><span class="line">            animationController.forward();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>设置对应的变化属性到对象上</li>
-</ol>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Container(</span><br><span class="line">    width: _size,</span><br><span class="line">    height: _size, 变化属性</span><br><span class="line">    color: animationColor.value,</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>设置触发事件</li>
-</ol>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MaterialButton(</span><br><span class="line">    onPressed: () &#123;</span><br><span class="line">    animationController.forward();</span><br><span class="line">    &#125;,</span><br><span class="line">    child: Text(<span class="string">'sizeAnimation'</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Tween变化"><a href="#Tween变化" class="headerlink" title="Tween变化"></a>Tween变化</h2><p>flutter内置很多tween用于处理不同类型的值，比如颜色，border。</p>
-<p>@init 这里会返回一系列BorderRadiusTween.value,是BorderRadius对象实例，把返回的值放到对应的BorderRadius盒子属性即可。</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">animationBorder = BorderRadiusTween(</span><br><span class="line">        begin: BorderRadius.all(Radius.circular(<span class="number">0</span>)),</span><br><span class="line">        end: BorderRadius.all(Radius.circular(<span class="number">50</span>)))</span><br><span class="line">    .animate(animationController);</span><br></pre></td></tr></table></figure>
-<p>@build</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Row(</span><br><span class="line">    mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">    children: &lt;Widget&gt;[</span><br><span class="line">    Container(</span><br><span class="line">        margin: EdgeInsets.only(top: <span class="number">10</span>),</span><br><span class="line">        width: <span class="number">100</span>,</span><br><span class="line">        height: <span class="number">100</span>,</span><br><span class="line">        decoration: BoxDecoration(</span><br><span class="line">            color: Colors.deepPurple,</span><br><span class="line">            border: Border.all(width: <span class="number">1</span>, color: Colors.transparent),</span><br><span class="line">            borderRadius: animationBorder.value),</span><br><span class="line">    )</span><br><span class="line">    ],</span><br><span class="line">),</span><br><span class="line">MaterialButton(</span><br><span class="line">    onPressed: () &#123;</span><br><span class="line">    animationController.forward();</span><br><span class="line">    &#125;,</span><br><span class="line">    child: Text(<span class="string">'borderRaduis'</span>),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>ColorTween</p>
-<h2 id="border家族"><a href="#border家族" class="headerlink" title="border家族"></a>border家族</h2><pre><code>ShapeBorder
-    |
-BoxBorder
-  /   \</code></pre><p>Border     BorderDirectional</p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2020/10/19/flutter-%E5%8A%A8%E7%94%BB/">
-    <time datetime="2020-10-19T02:42:36.000Z" class="entry-date">
-        2020-10-19
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/" rel="tag">flutter</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="post-hello-world post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2019/11/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2019/11/15/hello-world/" data-id="ckhvndiho000g7gusaxtch1wr" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>在_config.yml文件下的34行设置</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year-:month-:day-:title.md</span> <span class="comment"># File name of new posts</span></span><br></pre></td></tr></table></figure>
-
-<p>执行下列命令可以创建新的写作文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new webpack-start</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2019/11/15/hello-world/">
-    <time datetime="2019-11-15T09:08:55.482Z" class="entry-date">
-        2019-11-15
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
+    <nav id="pagination">
+      <nav id="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      </nav>
+    </nav>
   
 
 </div></div>
@@ -933,23 +953,23 @@ BoxBorder
       <ul>
         
           <li>
+            <a href="/2020/11/26/css3-%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98/">css3-线性渐变</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/26/css3-%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98/demo01/">css3-线性渐变/demo01</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/24/three.js-%E5%87%A0%E4%BD%95%E4%BD%93/">three.js-几何体</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/24/webpack-%E5%9B%BE%E7%89%87%E6%89%93%E5%8C%85/">webpack-图片打包</a>
           </li>
         
           <li>
             <a href="/2020/11/24/webpack-plugin-%E5%88%9D%E8%AF%86/">webpack-plugin-初始</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/">vue源码阅读一</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/05/webpack-loader/">webpack-loader</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/04/webpack-%E5%85%A5%E5%8F%A3%E4%B8%8E%E8%BE%93%E5%87%BA/">webpack-入口与输出</a>
           </li>
         
       </ul>
@@ -961,7 +981,7 @@ BoxBorder
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-%E6%BA%90%E7%A0%81/" rel="tag">vue 源码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flutter/" rel="tag">flutter</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/three-js/" rel="tag">three.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-%E6%BA%90%E7%A0%81/" rel="tag">vue 源码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/" rel="tag">webpack</a><span class="tag-list-count">6</span></li></ul>
     </div>
   </aside>
 
@@ -970,7 +990,7 @@ BoxBorder
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/vue-%E6%BA%90%E7%A0%81/" style="font-size: 10px;">vue 源码</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a>
+      <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/flutter/" style="font-size: 10px;">flutter</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/three-js/" style="font-size: 10px;">three.js</a> <a href="/tags/vue-%E6%BA%90%E7%A0%81/" style="font-size: 10px;">vue 源码</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a>
     </div>
   </aside>
 

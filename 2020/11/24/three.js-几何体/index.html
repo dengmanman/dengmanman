@@ -4,6 +4,24 @@
   <meta charset="utf-8">
   
   
+  <meta name="description" content="three.js核心对象
+scene
+material
+mesh
+camera
+render
+
+
+scene
+
+1const scene = new THREE.Scene()
+
+
+material
+
+
+meshmesh就是物体，需要材质和几何体融合。旋转：mesh.rotation.x += 0." />
+  
 
   
   
@@ -11,13 +29,17 @@
   
   
   
-  <title>Tag: vue 源码 | Hexo</title>
+  <title>three.js-几何体 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;vue-%E6%BA%90%E7%A0%81&#x2F;index.html">
+  <meta name="description" content="three.js核心对象 scene material mesh camera render   scene  1const scene = new THREE.Scene()   material   meshmesh就是物体，需要材质和几何体融合。旋转：mesh.rotation.x += 0.01    mesh.rotation.y += 0.01   camera   Perspecti">
+<meta name="keywords" content="three.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="three.js-几何体">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;11&#x2F;24&#x2F;three.js-%E5%87%A0%E4%BD%95%E4%BD%93&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="three.js核心对象 scene material mesh camera render   scene  1const scene = new THREE.Scene()   material   meshmesh就是物体，需要材质和几何体融合。旋转：mesh.rotation.x += 0.01    mesh.rotation.y += 0.01   camera   Perspecti">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-11-25T03:30:13.127Z">
 <meta name="twitter:card" content="summary">
   
   
@@ -67,46 +89,99 @@
 </header>
 
       <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-three.js-几何体" class="post-three.js-几何体 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="post type-post status-publish format-standard hentry archive-type-post">
-  <header class="entry-header">
-      
-  
-    <h1 class="entry-title">
-      <a class="archive-article-title" href="/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/">vue源码阅读一</a>
+    <h1 class="entry-title article-title">
+      three.js-几何体
     </h1>
   
 
-  </header>
-  <footer class="entry-meta">
-    <a href="/2020/11/10/vue%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E4%B8%80/">
-    <time datetime="2020-11-10T06:20:47.000Z" class="entry-date">
-        2020-11-10
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" target="_blank" rel="noopener" data-url="http://yoursite.com/2020/11/24/three.js-%E5%87%A0%E4%BD%95%E4%BD%93/" data-id="cki03fkc5000q44usffggavqx" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="three-js"><a href="#three-js" class="headerlink" title="three.js"></a>three.js</h1><h2 id="核心对象"><a href="#核心对象" class="headerlink" title="核心对象"></a>核心对象</h2><ol>
+<li>scene</li>
+<li>material</li>
+<li>mesh</li>
+<li>camera</li>
+<li>render</li>
+</ol>
+<blockquote>
+<p>scene</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> scene = <span class="keyword">new</span> THREE.Scene()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>material</p>
+</blockquote>
+<blockquote>
+<p>mesh<br>mesh就是物体，需要材质和几何体融合。<br>旋转：mesh.rotation.x += 0.01<br>    mesh.rotation.y += 0.01</p>
+</blockquote>
+<blockquote>
+<p>camera</p>
+</blockquote>
+<ol>
+<li>PerspectiveCamera</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> camera = <span class="keyword">new</span> THREE.PerspectiveCamera(<span class="number">60</span>, width/height, <span class="number">0.1</span>, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<p>参数，查看角度，长宽比， 观察最近距离， 观察最远距离。<br>这个相机最符合人类日常观察习惯。</p>
+<blockquote>
+<p>render</p>
+</blockquote>
+<ol>
+<li>WebGLRender<br>用法比较固定，通常只作为渲染<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> renderer = THREE.WebGLRender()</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(renderer.domElement)</span><br><span class="line">renderer.render(mesh, camera)</span><br></pre></td></tr></table></figure>
+坐标问题<br>camera.position.set(0,0,100)<br>这个位置是正视视角。</li>
+</ol>
+<blockquote>
+<p>light</p>
+</blockquote>
+<p>光线，贴图需要使用光线才能看到</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/11/24/three.js-%E5%87%A0%E4%BD%95%E4%BD%93/">
+    <time datetime="2020-11-24T09:54:03.000Z" class="entry-date">
+        2020-11-24
     </time>
 </a>
     
     
   <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-%E6%BA%90%E7%A0%81/" rel="tag">vue 源码</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/three-js/" rel="tag">three.js</a></li></ul>
 
     </footer>
 </article>
-  
-  
-    </div></section>
-  
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2020/11/26/css3-%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98/demo01/" rel="prev"><span class="meta-nav">←</span> css3-线性渐变/demo01</a></span>
+    
+    
+        <span class="nav-next"><a href="/2020/11/24/webpack-%E5%9B%BE%E7%89%87%E6%89%93%E5%8C%85/" rel="next">webpack-图片打包 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
 
 </div></div>
         <div id="secondary" class="widget-area" role="complementary">
